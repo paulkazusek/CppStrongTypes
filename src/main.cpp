@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 #include "person.h"
 
@@ -6,7 +7,7 @@ using namespace std;
 
 int main() 
 { 
-	Person* max = new Person("Max", "Mustermann");
+	shared_ptr<Person> max = make_shared<Person>("Max", "Mustermann");
 
     cout << "Hello " << max->getForename().c_str() << " " << max->getSurname().c_str() << endl; 
       
