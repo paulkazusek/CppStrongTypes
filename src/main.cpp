@@ -7,9 +7,9 @@ using namespace std;
 
 int main() 
 { 
-	shared_ptr<Person> max = make_shared<Person>("Max", "Mustermann");
+	shared_ptr<Person> max = make_shared<Person>( Forename( "Max" ), Surname( "Mustermann" ) );
 
-    cout << "Hello " << max->getForename().c_str() << " " << max->getSurname().c_str() << endl; 
+    cout << "Hallo " << max->getForename().get() << " " << max->getSurname().get() << endl;
       
     return 0; 
 } 

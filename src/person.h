@@ -1,18 +1,24 @@
 #ifndef _PERSON_
 #define _PERSON_
 
+#include <string>
+
+#include "named_typed.h"
+
+using Forename = NameTyped<std::string>;
+using Surname = NameTyped<std::string>;
 
 class Person
 {
 public:
-	Person( std::string forename, std::string surname ) : forename_( forename ), surname_( surname ) {}
+	Person( Forename forename, Surname surname ) : forename_( forename.get() ), surname_( surname ) {}
 
-	std::string getForename() const { return forename_; }
-	std::string getSurname() const { return surname_; }
+	Forename getForename() const { return forename_; }
+	Surname getSurname() const { return surname_; }
 
 private:
-	std::string forename_;
-	std::string surname_;
+	Forename forename_;
+	Surname surname_;
 };
 
 #endif // !_PERSON_
