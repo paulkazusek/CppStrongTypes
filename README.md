@@ -1,0 +1,2 @@
+# CppStrongTypes
+strong types example
